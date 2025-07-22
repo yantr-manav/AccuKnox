@@ -1,6 +1,12 @@
 ####  Question 3: Do Django signals run in the same database transaction as the caller?
 
+
+#### Explaination 
 - Yes, by default Django signals run within the same database transaction, especially pre_save and post_save.
+
+- The signal fires and sees the user (signal runs within transaction).
+
+- After rollback, the user no longer exists (proof that signal shared the transaction context).
 
 #### apps/signals.py
 ```python 
@@ -38,6 +44,3 @@ Signal triggered: User in DB? True
 Exception occurred: Force rollback
 User still in DB after rollback? False
 ```
-- The signal fires and sees the user (signal runs within transaction).
-
-- After rollback, the user no longer exists (proof that signal shared the transaction context).
