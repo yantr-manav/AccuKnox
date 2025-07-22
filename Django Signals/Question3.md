@@ -39,6 +39,7 @@ def create_user_with_rollback(request):
     return HttpResponse("Check terminal")
 ```
 
+#### Output:
 ```bash
 Signal triggered: User in DB? True
 Exception occurred: Force rollback
