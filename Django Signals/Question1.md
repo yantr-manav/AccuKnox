@@ -44,3 +44,5 @@ Signal END
 View END
 
 ```
+## Explaination
+By default, Django signals are executed synchronously, meaning the signal receiver runs immediately and blocks further code execution until it finishes.
